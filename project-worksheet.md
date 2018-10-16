@@ -6,28 +6,39 @@ This schedule will be used to keep track of your progress throughout the week an
 
 You are **responsible** for scheduling time with your squad to seek approval for each deliverable by the end of the corresponding day, excluding `Saturday` and `Sunday`.
 
-|  Day | Deliverable | Status
+|  Day | Due Date |Deliverable | Status
 |---|---| ---|
-|Day 1| Project Description | Incomplete
-|Day 2| Wireframes / Priority Matrix / Functional Components | Incomplete
-|Day 3| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|Day 4| Pseudocode / actual code | Incomplete
-|Day 5| Initial Clickable Model  | Incomplete
-|Day 6| MVP | Incomplete
-|Day 7| Present | Incomplete
+|Day 1| Oct 15 | Project Description | Incomplete
+|Day 2| Oct 16 | Wireframes / Priority Matrix / Functional Components | Incomplete
+|Day 3| Oct 17 |Core Application Structure (HTML, CSS, etc.) | Incomplete
+|Day 4| Oct 18 |Pseudocode / actual code | Incomplete
+|Day 5| Oct 19 |Initial Clickable Model  | Incomplete
+|Day 6| Oct 21 | MVP | Incomplete
+|Day 7| Oct 22 |Present | Incomplete
 
 
 ## Project Description
 
 Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
 
+Meet Me Halfway is a mobile app that allows users to easily find places of interest that are Halfway between you and your friend by entering two starting locations and selecting the type of place you are interested in meeting at, whether it is a restarant, bar, coffeeshop, etc. 
+
+https://developers.google.com/maps/documentation/
+
 ## Wireframes
 
 Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe.
 
+[Wireframe picture](https://res.cloudinary.com/dvjtpejbw/image/upload/v1539635929/20181015_141834.jpg "Wireframe")
+
+
+
 ## Priority Matrix
 
 Include a full list of features that have been prioritized based on the `Time and Importance` Matix.  
+
+[Priority Matrix](https://res.cloudinary.com/dvjtpejbw/image/upload/v1539635946/20181015_141846.jpg "Priority Matrix")
+
 
 ### MVP/PostMVP - 5min
 
@@ -36,17 +47,22 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 #### MVP 
 
 - Find and use external api 
-- Render data on page 
-- Allow user to choose favorites 
-- Save their choices in firebase
+- Enter in 2 starting locations
+- Render List View of results
+- Render Map View of results
 
 #### PostMVP 
 
-- Add user auth
+- Filter by type of place
+- Accept more than 2 starting locations
+- Suprise meetup location
+- Simultaneously use on multiple devices
 
 ## React Architectural Design
 
 Define the the React components and the architectural design of your app.
+
+[React Architectural Design](https://res.cloudinary.com/dvjtpejbw/image/upload/v1539635976/20181015_160832.jpg "React Architectural Design")
 
 ## Functional Components
 
@@ -54,17 +70,26 @@ Based on the initial logic defined in the previous sections try and breakdown th
 
 | Component | Description | 
 | --- | :---: |  
-| Header | This will render the header include the nav | 
-| Footer | This will render the header include the nav | 
+| App | This will render the UI | 
+| StartLocations | This will render the landing page that accepts the starting location input and handle data entry | 
+| ResultList | This will render the results list | 
+| ResultItem | This will render each result on the the result list/map |
+| Map | This will render the map view of the results | 
 
 
 Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe.
 
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| App | H | 2hrs |  |  |
+| StartLocations | H | 2hrs|  |  |
+| ResultList | H | 2hrs|  |  |
+| ResultItem | H | 3hrs|  |  |
+| Filter by Type of Place | L | 1hrs |  |  |
+| Suprise Meetup Location | L | 2hrs |  |  |
+| Accept more than 2 startking locations | L | 3hrs |  |  |
+| Simultaneously use on multiple phones | L | 3hrs |  |  |
+| Total | H | 16hrs|  |  |
 
 ## Helper Functions
 Helper functions should be generic enought that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
