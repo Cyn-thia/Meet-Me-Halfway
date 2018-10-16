@@ -7,7 +7,7 @@ This schedule will be used to keep track of your progress throughout the week an
 You are **responsible** for scheduling time with your squad to seek approval for each deliverable by the end of the corresponding day, excluding `Saturday` and `Sunday`.
 
 |  Day | Due Date |Deliverable | Status
-|---|---| ---|
+|---|---| ---| ---|
 |Day 1| Oct 15 | Project Description | Incomplete
 |Day 2| Oct 16 | Wireframes / Priority Matrix / Functional Components | Incomplete
 |Day 3| Oct 17 |Core Application Structure (HTML, CSS, etc.) | Incomplete
