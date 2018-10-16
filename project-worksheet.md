@@ -81,15 +81,16 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| App | H | 2hrs |  |  |
+| App | H | 3hrs |  |  |
 | StartLocations | H | 2hrs|  |  |
 | ResultList | H | 2hrs|  |  |
-| ResultItem | H | 3hrs|  |  |
+| ResultItem | H | 4hrs|  |  |
+| Map | H | 3hrs |  |  |
 | Filter by Type of Place | L | 1hrs |  |  |
 | Suprise Meetup Location | L | 2hrs |  |  |
 | Accept more than 2 startking locations | L | 3hrs |  |  |
 | Simultaneously use on multiple phones | L | 3hrs |  |  |
-| Total | H | 16hrs|  |  |
+| Total | H | 23hrs|  |  |
 
 ## Helper Functions
 Helper functions should be generic enought that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
