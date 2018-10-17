@@ -8,13 +8,13 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 |  Day | Due Date |Deliverable | Status
 |---|---| ---| ---|
-|Day 1| Oct 15 | Project Description | Incomplete
-|Day 2| Oct 16 | Wireframes / Priority Matrix / Functional Components | Incomplete
-|Day 3| Oct 17 |Core Application Structure (HTML, CSS, etc.) | Incomplete
-|Day 4| Oct 18 |Pseudocode / actual code | Incomplete
-|Day 5| Oct 19 |Initial Clickable Model  | Incomplete
+|Day 1| Oct 15 | Project Description | Complete
+|Day 2| Oct 16 | Wireframes / Priority Matrix / Functional Components | Complete
+|Day 3| Oct 17 | Core Application Structure (HTML, CSS, etc.) | Incomplete
+|Day 4| Oct 18 | Pseudocode / actual code | Incomplete
+|Day 5| Oct 19 | Initial Clickable Model  | Incomplete
 |Day 6| Oct 21 | MVP | Incomplete
-|Day 7| Oct 22 |Present | Incomplete
+|Day 7| Oct 22 | Present | Incomplete
 
 
 ## Project Description
@@ -82,15 +82,15 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | App | H | 3hrs |  |  |
-| StartLocations | H | 2hrs|  |  |
-| ResultList | H | 2hrs|  |  |
-| ResultItem | H | 4hrs|  |  |
-| Map | H | 3hrs |  |  |
-| Filter by Type of Place | L | 1hrs |  |  |
+| StartLocations | H | 4hrs|  |  |
+| ResultList | H | 4hrs|  |  |
+| ResultItem | H | 5hrs|  |  |
+| Map | H | 4hrs |  |  |
+| Filter by Type of Place | L | 3hrs |  |  |
 | Suprise Meetup Location | L | 2hrs |  |  |
 | Accept more than 2 startking locations | L | 3hrs |  |  |
-| Simultaneously use on multiple phones | L | 3hrs |  |  |
-| Total | H | 23hrs|  |  |
+| Simultaneously use on multiple phones | L | ∞hrs |  |  |
+| Total | H | 31hrs|  |  |
 
 ## Helper Functions
 Helper functions should be generic enought that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
