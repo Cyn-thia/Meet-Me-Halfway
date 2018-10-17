@@ -85,7 +85,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | StartLocations | H | 4hrs|  |  |
 | ResultList | H | 4hrs|  |  |
 | ResultItem | H | 5hrs|  |  |
-| Map | H | 4hrs |  |  |
+| Map | H | 4hrs | 8hrs |  |
 | Filter by Type of Place | L | 3hrs |  |  |
 | Suprise Meetup Location | L | 2hrs |  |  |
 | Accept more than 2 startking locations | L | 3hrs |  |  |

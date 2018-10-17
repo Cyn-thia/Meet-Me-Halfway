@@ -30,23 +30,32 @@ import React, { Component } from 'react';
 // </html>
 // )}}
 
+
+
 export default class Map extends Component {
+  componentDidUpdate(prevProps, prevState){
+    if(prevProps.google != this.props.google) {
+      this.loadMap();
+  }
 
+  loadMap(){
 
-render(){
+  }
 
-// let mapview =
-// return(
-//         function initMap() {
-//           map = new google.maps.map(document.getElementById('map'), {
-//             center: {lat: 40.739897, lng: -73.990142},
-//             zoom: 10
-//           })
-//         }
-//   )
+  render(){
 
-return(
-<div>
-  <img src="https://visualpharm.com/assets/758/World%20Map-595b40b85ba036ed117dc600.svg" />
-</div>
-  )}}
+  // let mapview =
+  // return(
+  //         function initMap() {
+  //           map = new google.maps.map(document.getElementById('map'), {
+  //             center: {lat: 40.739897, lng: -73.990142},
+  //             zoom: 10
+  //           })
+  //         }
+  //   )
+
+  return(
+  <div ref='map'>
+  Loading map...
+  </div>
+    )}}

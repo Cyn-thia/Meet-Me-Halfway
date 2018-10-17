@@ -45,7 +45,12 @@ border: 1px solid orange;
 }
 
 .results-list {
-border: 2px solid maroon;
+border: 2px solid blue;
+}
+
+.toggle-view{
+  border: 2px solid blue;
+
 }
 
 .results-item{

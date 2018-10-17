@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import StartLocations from './StartLocations'
 import './App.css'
-import Maps from './Map'
+// import Maps from './Map'
 import ResultsList from './ResultsList'
+import MapContainer from './MapContainer'
 
 class App extends Component {
   // constructor() {
@@ -32,7 +33,8 @@ class App extends Component {
           Half-Waze
         </header>
         <StartLocations />
-        <ResultsList
+        <ResultsList />
+        <MapContainer />
         view={this.state} />
       </div>
     );
