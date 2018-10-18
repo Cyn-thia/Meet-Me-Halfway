@@ -35,7 +35,7 @@
 }
 
 .input1, .input2, .meet-me {
-  width: 200px;
+  width: 200px; !important
   margin: 5px auto;
 }
 
@@ -56,6 +56,11 @@ border: 2px solid blue;
 .results-item{
 border: 2px solid pink;
 height: 70px;
+}
+
+.dropdown {
+  border: 2px solid orange;
+
 }
 
 @keyframes App-logo-spin {

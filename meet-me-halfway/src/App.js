@@ -4,38 +4,64 @@ import './App.css'
 // import Maps from './Map'
 import ResultsList from './ResultsList'
 import MapContainer from './MapContainer'
+import Dropdown from './Dropdown'
+
+
+
 
 class App extends Component {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     view:""
-  //   }
+
+constructor(props){
+super(props)
+this.state = {
+  startloc1:'',
+  markers: [
+    {className: "marker1",
+      name:'Me!',
+      position:{lat: 40.758849, lng: -73.985136}},
+
+    {className: "marker2",
+     name:'Me!',
+     position: {lat: 40.739897, lng: -73.990142}},
+
+    {className:"cafe",
+      name:'Starbucks',
+      position: {lat: 40.748241, lng: -73.989082}}
+  ]
+  }
+this.handleInputChange = this.handleInputChange.bind(this)
+
+}
+
+  handleClick(location){
+    console.log('click', location)
+  }
 
 
-  // takes in each letter when typing address
-  // handleChange
+  handleInputChange(e){
+    this.setState({
+      startloc1: e.target.value,
+    })
+  }
 
-  // fetching api
-  // onClick(){
-  // const apiKey = AIzaSyDuJ7B4ZyI2pXgYOlbsvI_9Ys4oFkJetzk
-  // fetch (`https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap`)
-  //   .then (res => res.json())
-  //   .then (res => {
-  //     console.log('res');
-  //   })
 
 
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          Half-Waze
+          Meet Me Halfway
         </header>
-        <StartLocations />
-        <ResultsList />
-        <MapContainer />
-        view={this.state} />
+        <StartLocations
+          handleInputChange={this.handleInputChange}
+          onClick={this.handleClick}
+        />
+        {/*<ResultsList />*/}
+        <MapContainer
+          startloc1={this.state.startloc1}
+          markers={this.state.markers}
+        />
+
       </div>
     );
   }

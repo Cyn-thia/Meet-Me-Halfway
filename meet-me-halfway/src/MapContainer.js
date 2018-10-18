@@ -6,23 +6,63 @@ import {Map, Marker, InfoWindow, GoogleApiWrapper} from 'google-maps-react';
 // Container Component is responsible for loading the Google Api
 export class MapContainer extends Component {
 
-fetchPlaces(mapProps, map) {
-  const {google} = mapProps;
-  const service = new google.maps.places.PlacesService(map);
+state = {
+  showingInfoWindow:true,
+  activeMarker: {},
+  selectedPlace: {},
+  meetingpoint: false,
 }
 
+
+onMarkerClick = (props, marker, e) => {
+  console.log(props, marker, e)
+    this.setState({
+      selectedPlace: props,
+      activeMarker: marker,
+      showingInfoWindow: true,
+      startloc1: this.props.startloc1
+   })
+};
+
+    toggle(){
+    this.setState({
+      meetingpoint: !this.state.meetingpoint
+    })
+  }
   render(){
+
+    let markers = this.props.markers.map((d,i) => {
+      return(
+          <Marker
+            key={i}
+            onClick = {this.onClick}
+            name={d.name}
+            position={d.position}
+          />
+        )
+    })
+
+console.log(markers)
+
     if (!this.props.loaded) {
       return <div>Loading...</div>
     }
+
 
     // must set height and width of map container or map wont show
     const style = {
       width: '100vw',
       height: '100vh'
+
     }
 
     return(
+      <div>
+      <button
+          className="meet-me"
+          onClick={() => this.toggle()}
+        >Meet Me</button>
+
       <Map google={this.props.google}
            initialCenter={{
               lat: 40.739897,
@@ -31,17 +71,16 @@ fetchPlaces(mapProps, map) {
            onReady={this.fetchPlaces}
            visible={true}
       >
-        <Marker
-          title={'TITLE: my home'}
-          name={'MY HOME'}
-          position={{lat: 40.723501, lng: -73.980910}}
-          />
-{/*          <Marker
-          title={'title: time square'}
-          name={'name: Time Square'}
-          position={{lat: 40.758849, lng: -73.985136}}
-          />*/}
+        { markers }
+        <InfoWindow
+          marker={this.state.activeMarker}
+          visible={this.state.showingInfoWindow}>
+          <div>
+            <h1>{this.state.selectedPlace.name}</h1>
+          </div>
+        </InfoWindow>
       </Map>
+      </div>
       )
   }
 }
