@@ -49,11 +49,11 @@ export class MapContainer extends Component {
     // temp = temp.filter(d => d !== undefined)
     console.log(temp)
     let markers = temp.map((d,i) => {
-      console.log('running', i)
+      // console.log('running', i)
       return(
           <Marker
             key={i}
-            onClick = {this.onClick}
+            onClick = {this.onMarkerClick}
             name={d.name}
             position={d.position}
           />
@@ -72,7 +72,7 @@ export class MapContainer extends Component {
     // must set height and width of map container or map wont show
   const style = {
     width: '100vw',
-    height: '100vh'
+    height: '500px'
 
   }
 

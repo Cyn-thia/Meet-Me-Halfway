@@ -31,10 +31,10 @@ export default class Dropdown extends Component {
     return (
 
         <div  className="dropdown" >
-         <div className="button"
+         <div className="dropdown-header"
               onClick={() => this.toggle()}
           >
-            Type of place
+            Select type of place...
           </div>
 
           { this.state.displayMenu &&

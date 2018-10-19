@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Dropdown from './Dropdown'
+import './App.css'
 
 
 export default class StartLocations extends Component {
@@ -16,14 +17,16 @@ export default class StartLocations extends Component {
     return(
       <div className="input-container">
 
-
         <input className="input1"
+               type="search"
                placeholder="Starting Location 1"
                onChange={(e) => this.props.handleInputChange(e)}
                value={this.props.startloc1}
         />
-        <input className="input2"
-               placeholder="Starting Location 2"
+        <input
+              type="search"
+              className="input2"
+              placeholder="Starting Location 2"
         />
         {/*<input className="place-type"
                placeholder="type of place"/>*/}

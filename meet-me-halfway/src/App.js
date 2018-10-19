@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import StartLocations from './StartLocations'
 import './App.css'
 // import Maps from './Map'
-import ResultsList from './ResultsList'
+// import ResultsList from './ResultsList'
 import MapContainer from './MapContainer'
-import Dropdown from './Dropdown'
+// import Dropdown from './Dropdown'
 
 
 
@@ -33,13 +33,13 @@ class App extends Component {
 
         {
           type:"bar",
-          name:"Jack Dempsey's",
+          name:"The Watering Hole",
           position: {lat: 40.748509, lng: -73.986975}
         },
 
         {
           type:"restaurant",
-          name:'The Harrod',
+          name:'Eataly',
           position: {lat: 40.748321, lng: -73.988603}
         },
       ],
@@ -50,17 +50,26 @@ class App extends Component {
     this.setTheState = this.setTheState.bind(this);
   }
 
-  async handleClick(e){
+  handleClick(e){
     console.log('click', e.target.innerText)
-
     const meetup = this.state.placetypes.filter(d => d.type == e.target.innerText.toLowerCase())
-
     console.log(meetup)
-
     const tempMarkers = this.state.markers.slice()
-    tempMarkers.push(meetup[0])
-    await this.setState({ markers: tempMarkers })
-    console.log(this.state.markers)
+
+    console.log("legnth of tempmarkers" , tempMarkers.length)
+
+    if (tempMarkers.length = 2 ){
+      tempMarkers.push(meetup[0])
+      this.setState({ markers: tempMarkers })
+      console.log('true')
+    } else {
+      tempMarkers.pop()
+      tempMarkers.push(meetup[0])
+      this.setState({ markers: tempMarkers })
+      console.log('false')
+    }
+    console.log("legnth of tempmarkers" , tempMarkers.length)
+
   }
 
   // pushType(){
