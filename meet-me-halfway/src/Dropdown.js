@@ -40,10 +40,14 @@ export default class Dropdown extends Component {
           { this.state.displayMenu &&
           <ul>
              <li
-                onClick={() => this.props.onClick('cafe')}
+                onClick={(e) => this.props.onClick(e)}
              >Cafe</li>
-             <li>Restaurant</li>
-             <li>Bar</li>
+             <li
+             onClick={(e) => this.props.onClick(e)}
+             >Restaurant</li>
+             <li
+             onClick={(e) => this.props.onClick(e)}
+             >Bar</li>
              <li></li>
           </ul>
         }

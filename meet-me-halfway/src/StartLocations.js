@@ -28,7 +28,6 @@ export default class StartLocations extends Component {
         {/*<input className="place-type"
                placeholder="type of place"/>*/}
 
-
           <Dropdown
             onClick={this.props.onClick}
           />

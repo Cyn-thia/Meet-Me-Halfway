@@ -42,6 +42,7 @@
 .meet-me{
 font-size: 15px;
 border: 1px solid orange;
+margin-bottom: 10px;
 }
 
 .results-list {
@@ -60,7 +61,7 @@ height: 70px;
 
 .dropdown {
   border: 2px solid orange;
-
+  margin: 20px;
 }
 
 @keyframes App-logo-spin {

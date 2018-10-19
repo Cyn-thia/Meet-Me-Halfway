@@ -11,31 +11,62 @@ import Dropdown from './Dropdown'
 
 class App extends Component {
 
-constructor(props){
-super(props)
-this.state = {
-  startloc1:'',
-  markers: [
-    {className: "marker1",
-      name:'Me!',
-      position:{lat: 40.758849, lng: -73.985136}},
+  constructor(props){
+    super(props)
+    this.state = {
+      markers: [
+        {className: "marker1",
+          name:'Me!',
+          position:{lat: 40.758849, lng: -73.985136}},
 
-    {className: "marker2",
-     name:'Me!',
-     position: {lat: 40.739897, lng: -73.990142}},
+        {className: "marker2",
+         name:'My friend',
+         position: {lat: 40.739897, lng: -73.990142}}
+      ],
 
-    {className:"cafe",
-      name:'Starbucks',
-      position: {lat: 40.748241, lng: -73.989082}}
-  ]
+      placetypes: [
+        {
+          type:"cafe",
+          name:'Starbucks',
+          position: {lat: 40.748047, lng:  -73.989220}
+        },
+
+        {
+          type:"bar",
+          name:"Jack Dempsey's",
+          position: {lat: 40.748509, lng: -73.986975}
+        },
+
+        {
+          type:"restaurant",
+          name:'The Harrod',
+          position: {lat: 40.748321, lng: -73.988603}
+        },
+      ],
+      typeobj: '',
+    }
+    this.handleInputChange = this.handleInputChange.bind(this)
+    this.handleClick = this.handleClick.bind(this);
+    this.setTheState = this.setTheState.bind(this);
   }
-this.handleInputChange = this.handleInputChange.bind(this)
 
-}
+  async handleClick(e){
+    console.log('click', e.target.innerText)
 
-  handleClick(location){
-    console.log('click', location)
+    const meetup = this.state.placetypes.filter(d => d.type == e.target.innerText.toLowerCase())
+
+    console.log(meetup)
+
+    const tempMarkers = this.state.markers.slice()
+    tempMarkers.push(meetup[0])
+    await this.setState({ markers: tempMarkers })
+    console.log(this.state.markers)
   }
+
+  // pushType(){
+  //   this.state.markers.push(meetup)
+  //   console.log(this.state.markers)
+  // }
 
 
   handleInputChange(e){
@@ -44,7 +75,22 @@ this.handleInputChange = this.handleInputChange.bind(this)
     })
   }
 
+  setTheState(obj) {
+    this.setState( obj )
+  }
 
+  // filterType(location){
+  //   const meetup = this.state.placetypes.filter(d => {
+  //       return (
+  //         d.type == location
+  //       );
+  //   })
+  //   console.log(meetup)
+  //   // this.props.setAppState({
+  //     this.setState({
+  //       typeobj: meetup
+  //     })
+  // }
 
   render() {
     return (
@@ -60,6 +106,10 @@ this.handleInputChange = this.handleInputChange.bind(this)
         <MapContainer
           startloc1={this.state.startloc1}
           markers={this.state.markers}
+          placetypes={this.state.placetypes}
+          selectedplace={this.state.selectedplace}
+          setAppState={ this.setTheState }
+          pushType={this.pushtype}
         />
 
       </div>
