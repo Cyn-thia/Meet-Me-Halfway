@@ -77,7 +77,7 @@ export class MapContainer extends Component {
   }
 
   return(
-    <div>
+    <div className="map-container">
     <button
         className="meet-me"
         onClick={() => this.toggle()}

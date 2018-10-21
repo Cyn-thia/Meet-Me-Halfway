@@ -5,6 +5,7 @@ import './App.css'
 // import ResultsList from './ResultsList'
 import MapContainer from './MapContainer'
 // import Dropdown from './Dropdown'
+// import LocationSearchInput from './LocationSearchInput'
 
 
 
@@ -44,6 +45,7 @@ class App extends Component {
         },
       ],
       typeobj: '',
+      value:''
     }
     this.handleInputChange = this.handleInputChange.bind(this)
     this.handleClick = this.handleClick.bind(this);
