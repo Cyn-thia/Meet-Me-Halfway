@@ -62,7 +62,7 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 Define the the React components and the architectural design of your app.
 
-[React Architectural Design](https://res.cloudinary.com/dvjtpejbw/image/upload/v1539635976/20181015_160832.jpg "React Architectural Design")
+[React Architectural Design](https://res.cloudinary.com/dvjtpejbw/image/upload/v1540221204/20181022_111216.jpg "React Architectural Design")
 
 ## Functional Components
 
@@ -102,6 +102,9 @@ Helper functions should be generic enought that they can be reused in other appl
 ## Additional Libraries
  Use this section to list all supporting libraries and thier role in the project. 
 
+[Google-Maps-React Library](https://github.com/fullstackreact/google-maps-react "Google-Maps-React Library"). Used this library to render the map 
+ 
+
 ## Code Snippet
 
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
@@ -117,6 +120,12 @@ function reverse(string) {
 
 ## Issues and Resolutions
  Use this section to list of all major issues encountered and their resolution.
+
+ [Cross Origin Error 1](https://cloudinary.com/console/media_library/asset/image/upload/cross_origin_error "Cross Origin Error 1")
+
+ [Cross Origin Error 2](https://res.cloudinary.com/dvjtpejbw/image/upload/v1540215417/cross_origin.png "Cross Origin Error 2")
+
+ [library errors](https://res.cloudinary.com/dvjtpejbw/image/upload/v1540215417/Screen_Shot_2018-10-22_at_9.35.31_AM.png "library errors")
 
 #### SAMPLE.....
 **ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                

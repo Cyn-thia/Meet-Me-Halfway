@@ -7,10 +7,10 @@ import {Map, Marker, InfoWindow, GoogleApiWrapper} from 'google-maps-react';
 export class MapContainer extends Component {
 
   state = {
-    showingInfoWindow:true,
-    activeMarker: {},
+    showingInfoWindow:true,  //hides/shows infowindow
+    activeMarker: {},       //shows active marker upon click
     selectedPlace: {},
-    meetingpoint: false,
+    // meetingpoint: false,
   }
 
 
@@ -24,11 +24,11 @@ export class MapContainer extends Component {
      })
   };
 
-  toggle(){
-    this.setState({
-      meetingpoint: !this.state.meetingpoint
-    })
-  }
+  // toggle(){
+  //   this.setState({
+  //     meetingpoint: !this.state.meetingpoint
+  //   })
+  // }
 
 
   // filterType(){
@@ -60,6 +60,35 @@ export class MapContainer extends Component {
         )
     })
 
+//     let startTemp = this.props.startMarkers.slice();
+//     // temp = temp.filter(d => d !== undefined)
+//     console.log('startTemp: ',startTemp)
+//     let startMarkers = startTemp.map((d,i) => {
+//       // console.log('running', i)
+//       return(
+//           <Marker
+//             key={i}
+//             onClick = {this.onMarkerClick}
+//             name={d.name}
+//             position={d.position}
+//           />
+//         )
+//     })
+
+// let startTemp1 = this.props.startMarkers1.slice();
+//     // temp = temp.filter(d => d !== undefined)
+//     console.log('startTemp: ',startTemp)
+//     let startMarkers1 = startTemp1.map((d,i) => {
+//       // console.log('running', i)
+//       return(
+//           <Marker
+//             key={i}
+//             onClick = {this.onMarkerClick}
+//             name={d.name}
+//             position={d.position}
+//           />
+//         )
+//     })
   // console.log(markers)
 
 
@@ -76,11 +105,6 @@ export class MapContainer extends Component {
     border: '10px solid white',
   }
 
-// make map center dynamically based on markers...not working
-  var bounds = new this.props.google.maps.LatLngBounds();
-for (var i = 0; i < temp.length; i++) {
-  bounds.extend(temp[i].position);
-}
 
   return(
     <div className="map-container">
@@ -93,12 +117,13 @@ for (var i = 0; i < temp.length; i++) {
          onReady={this.fetchPlaces}
          visible={true}
          style={style}
-         bounds={bounds}
     >
       { markers }
+{/*      { startMarkers }
+      { startMarkers1 }*/}
       <InfoWindow
         marker={this.state.activeMarker}
-        visible='true'>
+        visible={this.state.showingInfoWindow}>
         <div>
           <h1>{this.state.selectedPlace.name}</h1>
         </div>

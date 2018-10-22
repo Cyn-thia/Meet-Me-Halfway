@@ -13,29 +13,28 @@ export default class StartLocations extends Component {
   //       console.log('res');
   //     })}
 
+
+
   render(){
     return(
       <div className="input-container">
-
         <input className="input1"
                type="search"
-               placeholder="Where are you!?"
-               onChange={(e) => this.props.handleInputChange(e)}
+               placeholder="Your location"
+               // onChange={(e) => this.props.handleInputChange(e)}
                value={this.props.startloc1}
+               onChange={this.props.handleLoc}
         />
         <input
               type="search"
               className="input2"
-              placeholder="Where's your friend?!"
+              placeholder="Your friend's location"
+              onChange={this.props.handleLoc1}
         />
-        {/*<input className="place-type"
-               placeholder="type of place"/>*/}
-
           <Dropdown
             onClick={this.props.onClick}
             activePlaceType={this.props.activePlaceType}
             displayMenu={this.props.displayMenu}
-
           />
           <button
             className="meet-me"

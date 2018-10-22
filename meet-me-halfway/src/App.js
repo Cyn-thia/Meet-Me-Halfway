@@ -15,15 +15,21 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      markers: [
-        {className: "marker1",
-          name:'Me!',
+      markers: [{className: "marker1",
+          name:'You!',
           position:{lat: 40.758849, lng: -73.985136}},
 
         {className: "marker2",
-         name:'My friend',
-         position: {lat: 40.739897, lng: -73.990142}}
-      ],
+         name:'Your friend!',
+         position: {lat: 40.739897, lng: -73.990142}}],
+
+      // startMarkers:[],
+
+      // startMarkers1:[],
+
+      // startLocations:[
+
+      // ],
 
       placetypes: [
         {
@@ -48,10 +54,12 @@ class App extends Component {
       activePlaceType:'Select Type of Place...',
       displayMenu: true
     }
-    this.handleInputChange = this.handleInputChange.bind(this)
+    // this.handleInputChange = this.handleInputChange.bind(this)
     this.handleClick = this.handleClick.bind(this);
-    this.setTheState = this.setTheState.bind(this);
+    // this.setTheState = this.setTheState.bind(this);
+    // this.handleLoc = this.handleLoc.bind(this);
   }
+
 
   handleClick(e){
     console.log('click', e.target.innerText)
@@ -74,21 +82,34 @@ class App extends Component {
     }
   }
 
-  // pushType(){
-  //   this.state.markers.push(meetup)
-  //   console.log(this.state.markers)
+//   handleLoc(){
+//     console.log('start locations: ', this.state.startLocations)
+//     const start1= this.state.startLocations[0]
+//     const tempMarkers = this.state.startMarkers.slice()
+//     tempMarkers.push(start1)
+//     this.setState({
+//       startMarkers: tempMarkers
+//   })
+//   }
+
+// handleLoc1(){
+//     // const start2= this.state.startLocations[1]
+//     const tempMarkers = this.state.startMarkers1.slice()
+//     tempMarkers.push(this.state.startLocations[1])
+//     this.setState({
+//       startMarkers1: tempMarkers
+//   })
+//   }
+
+  // handleInputChange(e){
+  //   this.setState({
+  //     startloc1: e.target.value,
+  //   })
   // }
 
-
-  handleInputChange(e){
-    this.setState({
-      startloc1: e.target.value,
-    })
-  }
-
-  setTheState(obj) {
-    this.setState( obj )
-  }
+  // setTheState(obj) {
+  //   this.setState( obj )
+  // }
 
   // filterType(location){
   //   const meetup = this.state.placetypes.filter(d => {
@@ -110,19 +131,24 @@ class App extends Component {
           Meet Me Halfway
         </header>
         <div className="render-container">
+            {/*<LocationSearchInput />*/}
             <StartLocations
               handleInputChange={this.handleInputChange}
               onClick={this.handleClick}
               activePlaceType={this.state.activePlaceType}
               displayMenu={this.state.displayMenu}
+              handleLoc={this.handleLoc}
+              handleLoc1={this.handleLoc1}
             />
             {/*<ResultsList />*/}
             <MapContainer
-              startloc1={this.state.startloc1}
+              startMarkers={this.state.startMarkers}
               markers={this.state.markers}
               placetypes={this.state.placetypes}
               setAppState={ this.setTheState }
               pushType={this.pushtype}
+              startMarkers1={this.state.startMarkers1}
+
             />
         </div>
       </div>

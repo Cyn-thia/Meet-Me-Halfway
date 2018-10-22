@@ -58,7 +58,7 @@
 input {
     font-family: system-ui;
     font-weight: 300;
-    font-size: 14px;
+    font-size: 16px;
     height: 37px;
     width: 50%;
     background: transparent;
@@ -122,6 +122,8 @@ height: 70px;
 .dropdown-header{
   margin: 5px;
   color:gray;
+  font-size: 16px;
+
 }
 
 ul{
