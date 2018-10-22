@@ -3,52 +3,45 @@ import React, { Component } from 'react';
 export default class Dropdown extends Component {
 
   state = {
-    displayMenu:false,
+    green: false,
   }
 
   toggle(){
     this.setState({
-      displayMenu: !this.state.displayMenu
+      displayMenu: !this.state.displayMenu,
+      green: !this.state.green,
     })
   }
 
-  showDropdownMenu(event) {
-    event.preventDefault();
-    this.setState({ displayMenu: true },
-     //  () => {
-     // document.addEventListener('click', this.hideDropdownMenu);
-    );
-  }
-
-  hideDropdownMenu() {
-    this.setState({ displayMenu: false },
-      // () => {
-      // document.removeEventListener('click', this.hideDropdownMenu);
-    );
-  }
+  // changeColor(){
+  //   this.setState({
+  //     green: !this.state.green
+  //   })
+  // }
 
   render() {
+    let borderColor = this.state.green ? "green-border" : "dropdown"
+
     return (
 
-        <div  className="dropdown" >
+        <div  className={borderColor} >
          <div className="dropdown-header"
               onClick={() => this.toggle()}
           >
-            Select type of place...
+            {this.props.activePlaceType}
           </div>
 
           { this.state.displayMenu &&
           <ul>
              <li
                 onClick={(e) => this.props.onClick(e)}
-             >Cafe</li>
+                >Cafe</li>
              <li
-             onClick={(e) => this.props.onClick(e)}
-             >Restaurant</li>
+                 onClick={(e) => this.props.onClick(e)}
+                 >Restaurant</li>
              <li
-             onClick={(e) => this.props.onClick(e)}
-             >Bar</li>
-             <li></li>
+               onClick={(e) => this.props.onClick(e)}
+               >Bar</li>
           </ul>
         }
 

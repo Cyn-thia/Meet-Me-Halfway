@@ -10,10 +10,10 @@ You are **responsible** for scheduling time with your squad to seek approval for
 |---|---| ---| ---|
 |Day 1| Oct 15 | Project Description | Complete
 |Day 2| Oct 16 | Wireframes / Priority Matrix / Functional Components | Complete
-|Day 3| Oct 17 | Core Application Structure (HTML, CSS, etc.) | Incomplete
-|Day 4| Oct 18 | Pseudocode / actual code | Incomplete
-|Day 5| Oct 19 | Initial Clickable Model  | Incomplete
-|Day 6| Oct 21 | MVP | Incomplete
+|Day 3| Oct 17 | Core Application Structure (HTML, CSS, etc.) | Complete
+|Day 4| Oct 18 | Pseudocode / actual code | Complete
+|Day 5| Oct 19 | Initial Clickable Model  | Complete
+|Day 6| Oct 21 | MVP | Complete
 |Day 7| Oct 22 | Present | Incomplete
 
 
@@ -48,11 +48,11 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 - Find and use external api 
 - Enter in 2 starting locations
-- Render List View of results
 - Render Map View of results
 
 #### PostMVP 
 
+- Render List View of results
 - Filter by type of place
 - Accept more than 2 starting locations
 - Suprise meetup location
@@ -81,16 +81,16 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| App | H | 3hrs |  |  |
-| StartLocations | H | 4hrs|  |  |
-| ResultList | H | 4hrs|  |  |
-| ResultItem | H | 5hrs|  |  |
-| Map | H | 4hrs | 8hrs |  |
-| Filter by Type of Place | L | 3hrs |  |  |
-| Suprise Meetup Location | L | 2hrs |  |  |
-| Accept more than 2 startking locations | L | 3hrs |  |  |
-| Simultaneously use on multiple phones | L | ∞hrs |  |  |
-| Total | H | 31hrs|  |  |
+| App | H | 3hrs | 5hrs | 5hrs |
+| StartLocations | H | 4hrs| 6hrs | 6hrs |
+| Map/MapContainer | H | 8hrs | 20hrs | 20hrs |
+| ResultList | L | 4hrs| 1hrs | 1hrs |
+| ResultItem | L | 5hrs| 1hrs | 1hrs |
+| Filter by Type of Place | L | 3hrs | 6hrs | 6hrs |
+| Suprise Meetup Location | L | 2hrs | 0hrs | 0hrs |
+| Accept more than 2 startking locations | L | 3hrs | 0hrs | 0hrs |
+| Simultaneously use on multiple phones | L | ∞hrs | 0hrs | 0hrs |
+| Total | H | 31hrs| 39hrs | 39hrs |
 
 ## Helper Functions
 Helper functions should be generic enought that they can be reused in other applications. Use this section to document all helper functions that fall into this category.

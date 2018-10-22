@@ -27,25 +27,26 @@ class App extends Component {
 
       placetypes: [
         {
-          type:"cafe",
+          type:"Cafe",
           name:'Starbucks',
           position: {lat: 40.748047, lng:  -73.989220}
         },
 
         {
-          type:"bar",
+          type:"Bar",
           name:"The Watering Hole",
           position: {lat: 40.748509, lng: -73.986975}
         },
 
         {
-          type:"restaurant",
+          type:"Restaurant",
           name:'Eataly',
           position: {lat: 40.748321, lng: -73.988603}
         },
       ],
-      typeobj: '',
-      value:''
+      value:'',
+      activePlaceType:'Select Type of Place...',
+      displayMenu: true
     }
     this.handleInputChange = this.handleInputChange.bind(this)
     this.handleClick = this.handleClick.bind(this);
@@ -54,24 +55,23 @@ class App extends Component {
 
   handleClick(e){
     console.log('click', e.target.innerText)
-    const meetup = this.state.placetypes.filter(d => d.type == e.target.innerText.toLowerCase())
-    console.log(meetup)
+    const meetup = this.state.placetypes.filter(d => d.type == e.target.innerText)
+    // console.log(meetup)
     const tempMarkers = this.state.markers.slice()
-
-    console.log("legnth of tempmarkers" , tempMarkers.length)
-
     if (tempMarkers.length = 2 ){
-      tempMarkers.push(meetup[0])
-      this.setState({ markers: tempMarkers })
-      console.log('true')
+        tempMarkers.push(meetup[0])
+        this.setState({ markers: tempMarkers,
+        activePlaceType: e.target.innerText,
+        displayMenu: !this.state.displayMenu })
+        console.log('true')
     } else {
-      tempMarkers.pop()
-      tempMarkers.push(meetup[0])
-      this.setState({ markers: tempMarkers })
-      console.log('false')
+        tempMarkers.pop()
+        tempMarkers.push(meetup[0])
+        this.setState({ markers: tempMarkers,
+        activePlaceType: e.target.innerText,
+        displayMenu: !this.state.displayMenu })
+        console.log('false')
     }
-    console.log("legnth of tempmarkers" , tempMarkers.length)
-
   }
 
   // pushType(){
@@ -109,20 +109,22 @@ class App extends Component {
         <header className="App-header">
           Meet Me Halfway
         </header>
-        <StartLocations
-          handleInputChange={this.handleInputChange}
-          onClick={this.handleClick}
-        />
-        {/*<ResultsList />*/}
-        <MapContainer
-          startloc1={this.state.startloc1}
-          markers={this.state.markers}
-          placetypes={this.state.placetypes}
-          selectedplace={this.state.selectedplace}
-          setAppState={ this.setTheState }
-          pushType={this.pushtype}
-        />
-
+        <div className="render-container">
+            <StartLocations
+              handleInputChange={this.handleInputChange}
+              onClick={this.handleClick}
+              activePlaceType={this.state.activePlaceType}
+              displayMenu={this.state.displayMenu}
+            />
+            {/*<ResultsList />*/}
+            <MapContainer
+              startloc1={this.state.startloc1}
+              markers={this.state.markers}
+              placetypes={this.state.placetypes}
+              setAppState={ this.setTheState }
+              pushType={this.pushtype}
+            />
+        </div>
       </div>
     );
   }

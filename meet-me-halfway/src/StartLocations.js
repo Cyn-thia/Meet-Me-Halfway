@@ -19,23 +19,29 @@ export default class StartLocations extends Component {
 
         <input className="input1"
                type="search"
-               placeholder="Starting Location 1"
+               placeholder="Where are you!?"
                onChange={(e) => this.props.handleInputChange(e)}
                value={this.props.startloc1}
         />
         <input
               type="search"
               className="input2"
-              placeholder="Starting Location 2"
+              placeholder="Where's your friend?!"
         />
         {/*<input className="place-type"
                placeholder="type of place"/>*/}
 
           <Dropdown
             onClick={this.props.onClick}
+            activePlaceType={this.props.activePlaceType}
+            displayMenu={this.props.displayMenu}
+
           />
-
-
+          <button
+            className="meet-me"
+          >
+          Meet Me
+          </button>
       </div>
       )
   }

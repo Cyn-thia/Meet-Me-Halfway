@@ -15,7 +15,7 @@ export class MapContainer extends Component {
 
 
   onMarkerClick = (props, marker, e) => {
-    console.log(props, marker, e)
+    console.log('onMarkerClick properties ', props, marker, e)
       this.setState({
         selectedPlace: props,
         activeMarker: marker,
@@ -60,7 +60,7 @@ export class MapContainer extends Component {
         )
     })
 
-  console.log(markers)
+  // console.log(markers)
 
 
 
@@ -71,30 +71,34 @@ export class MapContainer extends Component {
 
     // must set height and width of map container or map wont show
   const style = {
-    width: '100vw',
-    height: '500px'
-
+    width: '86%',
+    height: '510px',
+    border: '10px solid white',
   }
+
+// make map center dynamically based on markers...not working
+  var bounds = new this.props.google.maps.LatLngBounds();
+for (var i = 0; i < temp.length; i++) {
+  bounds.extend(temp[i].position);
+}
 
   return(
     <div className="map-container">
-    <button
-        className="meet-me"
-        onClick={() => this.toggle()}
-      >Meet Me</button>
 
     <Map google={this.props.google}
          initialCenter={{
-            lat: 40.739897,
-            lng: -73.990142
+            lat: 40.750418,
+            lng: -73.989326
          }}
          onReady={this.fetchPlaces}
          visible={true}
+         style={style}
+         bounds={bounds}
     >
       { markers }
       <InfoWindow
         marker={this.state.activeMarker}
-        visible={this.state.showingInfoWindow}>
+        visible='true'>
         <div>
           <h1>{this.state.selectedPlace.name}</h1>
         </div>
